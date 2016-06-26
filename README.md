@@ -1,3 +1,5 @@
 # Kadai04_ih13a_22
-intentでBitmap渡すのやめ、IDを渡すだけにした。
+intentでBitmapを渡していたが この方法ではサイズの大きいBitmapを渡そうとすると
+エラー(TransactionTooLargeException)が発生した。
+intentでBitmap渡すのやめ、IDを渡すだけにした
 渡したIDでDBからBitmapを引っ張ってくる
