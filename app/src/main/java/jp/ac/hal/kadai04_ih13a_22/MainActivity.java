@@ -31,9 +31,9 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    DrawMemoView dmv;
 
     private static final int REQUEST_CODE = 1;
+    DrawMemoView dmv;
     AlertDialog.Builder saveBuilder;
     AlertDialog.Builder clearBuilder;
     AlertDialog.Builder changeColorBuilder;
@@ -103,7 +103,6 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.sava) {
 
-            Toast.makeText(MainActivity.this,""+flg,Toast.LENGTH_SHORT).show();
             saveDialog.show();
 
         } else if (id == R.id.clear) {
@@ -151,7 +150,6 @@ public class MainActivity extends AppCompatActivity
                     try {
                         dmv.save(nameStr);
                     } catch (IOException e) {
-                        // TODO 自動生成された catch ブロック
                         e.printStackTrace();
                     }
                 }
@@ -333,7 +331,6 @@ public class MainActivity extends AppCompatActivity
                     flg =true;
                     id=hoge.getId();
 
-                    Toast.makeText(MainActivity.this,""+flg,Toast.LENGTH_SHORT).show();
 
                 } else if (resultCode == RESULT_CANCELED) {
 
