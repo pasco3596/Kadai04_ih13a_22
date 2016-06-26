@@ -1,0 +1,3 @@
+# Kadai04_ih13a_22
+intentでBitmap渡すのやめ、IDを渡すだけにした。
+渡したIDでDBからBitmapを引っ張ってくる
