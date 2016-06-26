@@ -320,16 +320,23 @@ public class MainActivity extends AppCompatActivity
 
             case (REQUEST_CODE):
                 if (resultCode == RESULT_OK) {
-                    Hoge hoge = (Hoge)data.getSerializableExtra("hoge");
-                    hoge.getId();
-                    BitmapFactory.Options options = new  BitmapFactory.Options();
+
+                    int hogeId = data.getIntExtra("hoge",0);
+
+                    MyDatabaseHelper mh = new MyDatabaseHelper(this);
+                    SQLiteDatabase db = mh.getReadableDatabase();
+                    DAO dao = new DAO(db);
+                    Hoge hoge = dao.select(hogeId);
+                    db.close();
+
+                    BitmapFactory.Options options = new BitmapFactory.Options();
                     options.inMutable = true;
-                    byte[] byteArray =hoge.getMemo();
+                    byte[] byteArray = hoge.getMemo();
                     //byte[] からビットマップを取得する
-                    Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length,options);
+                    Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length, options);
                     dmv.updateDraw(bitmap);
-                    flg =true;
-                    id=hoge.getId();
+                    flg = true;
+                    id = hoge.getId();
 
 
                 } else if (resultCode == RESULT_CANCELED) {
@@ -338,9 +345,9 @@ public class MainActivity extends AppCompatActivity
 
                 }
                 break;
+
             default:
                 break;
         }
-
     }
 }

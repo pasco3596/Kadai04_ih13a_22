@@ -143,9 +143,6 @@ public class ListActivity extends AppCompatActivity
                         lv.setAdapter(adapter);
                         db.close();
 
-
-
-
                     }
                 });
 
@@ -169,7 +166,7 @@ public class ListActivity extends AppCompatActivity
                 if(0==which){
                     //編集
                     Intent intent = new Intent(ListActivity.this,MainActivity.class);
-                    intent.putExtra("hoge",hoge);
+                    intent.putExtra("hoge",hoge.getId());
                     setResult(RESULT_OK,intent);
                     finish();
 
@@ -188,10 +185,7 @@ public class ListActivity extends AppCompatActivity
             }
         });
 
-
         imageListDialog = imageListBuilder.create();
     }
 
 }
-
-

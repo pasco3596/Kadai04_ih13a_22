@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.util.Log;
 
 public class DAO {
 
@@ -66,6 +67,26 @@ public class DAO {
 			e.printStackTrace();
 		}
 		return list;
+	}
+	public Hoge  select(int id){
+		Hoge hoge = new Hoge();
+		try{
+			Cursor c = db.rawQuery("select * from aa where _id = ? ",
+					new String[]{String.valueOf(id)});
+			boolean flg = c.moveToFirst();
+			if(flg){
+				id = c.getInt(c.getColumnIndex("_id"));
+				String name = c.getString(c.getColumnIndex("name"));
+				byte[] memo = c.getBlob(c.getColumnIndex("memo"));
+				hoge.setId(id);
+				hoge.setName(name);
+				hoge.setMemo(memo);
+			}
+			c.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return hoge;
 	}
 	public String insert(String name,byte[] blob){
 		String msg = "成功";
