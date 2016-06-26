@@ -1,0 +1,4 @@
+# Kadai04_ih13a_22
+intentでBitmapを渡していたが
+この方法ではサイズの大きいBitmapを渡そうとすると
+エラー(TransactionTooLargeException)が発生した。
