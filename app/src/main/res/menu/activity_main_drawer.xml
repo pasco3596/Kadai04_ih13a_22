@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/top"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="メモに戻る" />
+        <item
+            android:id="@+id/sava"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/save" />
+        <item
+            android:id="@+id/clear"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/clear" />
+        <item
+            android:id="@+id/all"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/all" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="カラー" />
+    </group>
+
+    <!--<item android:title="Communicate">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_share"-->
+                <!--android:icon="@drawable/ic_menu_share"-->
+                <!--android:title="Share" />-->
+            <!--<item-->
+                <!--android:id="@+id/nav_send"-->
+                <!--android:icon="@drawable/ic_menu_send"-->
+                <!--android:title="Send" />-->
+        <!--</menu>-->
+    <!--</item>-->
+
+</menu>
