@@ -45,11 +45,15 @@ public class DAO {
 	}
 	public List<Hoge> select(String searchStr){
 		List<Hoge> list = new ArrayList<Hoge>();
+		searchStr=searchStr.replaceAll("　"," ");
 		String[] sStr = searchStr.split(" ",0);
-		String str = "select * from aa where name like ? ";
+		String str = "select * from aa where name like  ?  ";
 		String where = " or name like ? ";
 		for(int i =0;i<sStr.length-1;i++){
 			str+=where;
+		}
+		for(int i =0;i<sStr.length;i++){
+			sStr[i] = "%"+sStr[i]+"%";
 		}
 		try{
 			Cursor c = db.rawQuery(str,sStr);

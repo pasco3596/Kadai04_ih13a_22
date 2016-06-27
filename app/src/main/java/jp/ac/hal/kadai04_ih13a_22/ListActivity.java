@@ -134,10 +134,13 @@ public class ListActivity extends AppCompatActivity
                         String searchStr = searchArea.getText().toString();
                         SQLiteDatabase db = mh.getWritableDatabase();
                         DAO dao = new DAO(db);
+
                         if(searchStr.equals("")){
                             list = dao.select();
                         }else {
+
                             list = dao.select(searchStr);
+
                         }
                         adapter = new ImageArrayAdapter(ListActivity.this, R.layout.imagelist, list);
                         lv.setAdapter(adapter);
