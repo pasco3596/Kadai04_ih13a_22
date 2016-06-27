@@ -123,18 +123,18 @@ public class ListActivity extends AppCompatActivity
         return true;
     }
     public void listview(){
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
+//
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                handler.post(new Runnable() {
+//                    @Override
+//                    public void run() {
 
                         String searchStr = searchArea.getText().toString();
                         SQLiteDatabase db = mh.getWritableDatabase();
                         DAO dao = new DAO(db);
-                        if(searchStr==null){
+                        if(searchStr.equals("")){
                             list = dao.select();
                         }else {
                             list = dao.select(searchStr);
@@ -142,12 +142,12 @@ public class ListActivity extends AppCompatActivity
                         adapter = new ImageArrayAdapter(ListActivity.this, R.layout.imagelist, list);
                         lv.setAdapter(adapter);
                         db.close();
-
-                    }
-                });
-
-            }
-        }).start();
+//
+//                    }
+//                });
+//
+//            }
+//        }).start();
 
 
     }

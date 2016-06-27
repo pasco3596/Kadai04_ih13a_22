@@ -29,8 +29,7 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final int REQUEST_CODE = 1;
     DrawMemoView dmv;
