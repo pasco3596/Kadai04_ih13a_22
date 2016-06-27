@@ -46,7 +46,7 @@ public class DAO {
 	public List<Hoge> select(String searchStr){
 		List<Hoge> list = new ArrayList<Hoge>();
 		String[] sStr = searchStr.split(" ",0);
-		String str = "select * from where name like ? ";
+		String str = "select * from aa where name like ? ";
 		String where = " or name like ? ";
 		for(int i =0;i<sStr.length-1;i++){
 			str+=where;
