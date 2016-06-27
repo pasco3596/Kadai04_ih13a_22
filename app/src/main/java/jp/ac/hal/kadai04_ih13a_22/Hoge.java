@@ -20,9 +20,6 @@ public class Hoge implements Serializable{
 		this.name = name;
 	}
 
-	public String toString(){
-		return String.format("%s\n%s", id,name);
-	}
 	public byte[] getMemo() {
 		return memo;
 	}
